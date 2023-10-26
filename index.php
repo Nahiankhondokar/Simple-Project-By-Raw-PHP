@@ -18,25 +18,56 @@
     <div class="fb-auth">
       <div class="auth-wraper">
         <div class="auth-left">
+
+        <?php
+
+          if(isset($_POST['add'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $password = $_POST['password'];
+        
+
+        
+          }
+
+        ?>
+
           <img src="./assets/icons/facebook.svg" alt="" />
           <h2>
-            Facebook helps you connect and share with the people in your life.
+            User information
           </h2>
         </div>
         <div class="auth-right">
           <div class="auth-box">
-            <form action="">
-              <div class="auth-form">
+            <form action="" method="POST">
+            <div class="auth-form">
                 <input
                   type="text"
-                  placeholder="Email address or phone number"
+                  name="name"
+                  placeholder="Name"
                 />
               </div>
               <div class="auth-form">
-                <input type="password" placeholder="Password" />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                />
               </div>
               <div class="auth-form">
-                <button type="submit">Log In</button>
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone number"
+                />
+              </div>
+              <div class="auth-form">
+                <input type="password" placeholder="Password"
+                name="password" />
+              </div>
+              <div class="auth-form">
+                <button name="add" type="submit">Log In</button>
               </div>
             </form>
 
@@ -112,7 +143,7 @@
     </div>
 
     <!-- MODAL BOX  -->
-    <div class="blur-box">
+    <!-- <div class="blur-box">
       <div class="sign-up-card">
         <div class="sign-up-header">
           <div class="sign-up-content">
@@ -187,6 +218,6 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>
