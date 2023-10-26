@@ -22,8 +22,12 @@
       $phone = $_POST['phone'];
       $password = $_POST['password'];
 
+      // echo filter_var($email, FILTER_VALIDATE_EMAIL);
+
       if(empty($name) || empty($email) || empty($phone) || empty($password)){
           $message =  "<p style='color:red;'>Fields are required</p>";
+      }elseif(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+        $message =  "<p style='color:red;'>Invalid email</p>";
       }
 
     }
