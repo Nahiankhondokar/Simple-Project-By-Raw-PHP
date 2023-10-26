@@ -1,145 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./assets/icons/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
     <title>Facebook – log in or sign up</title>
 
     <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
+
+    <?php
+
+    if(isset($_POST['add'])){
+
+      $name = $_POST['name'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $password = $_POST['password'];
+
+      if(empty($name) || empty($email) || empty($phone) || empty($password)){
+          $message =  "<p style='color:red;'>Fields are required</p>";
+      }
+
+    }
+
+    ?>
+
     <!-- Facebook Auth Area -->
     <div class="fb-auth">
-      <div class="auth-wraper">
-        <div class="auth-left">
+        <div class="auth-wraper">
+            <div class="auth-left">
+                <img src="./assets/icons/facebook.svg" alt="" />
+                <h2>
+                    User information
+                </h2>
+            </div>
+            <div class="auth-right">
+                <?php
+                if(isset($message)){
+                  echo $message;
+                }
+              ?>
+                <div class="auth-box">
+                    <form action="" method="POST">
+                        <div class="auth-form">
+                            <input type="text" name="name" placeholder="Name" />
+                        </div>
+                        <div class="auth-form">
+                            <input type="text" name="email" placeholder="Email" />
+                        </div>
+                        <div class="auth-form">
+                            <input type="text" name="phone" placeholder="Phone number" />
+                        </div>
+                        <div class="auth-form">
+                            <input type="password" placeholder="Password" name="password" />
+                        </div>
+                        <div class="auth-form">
+                            <button name="add" type="submit">Log In</button>
+                        </div>
+                    </form>
 
-        <?php
+                    <a href="#">Forgotten password?</a>
 
-          if(isset($_POST['add'])){
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $password = $_POST['password'];
-        
+                    <div class="divider"></div>
 
-        
-          }
-
-        ?>
-
-          <img src="./assets/icons/facebook.svg" alt="" />
-          <h2>
-            User information
-          </h2>
+                    <button>Create New Account</button>
+                </div>
+                <p>
+                    <a href="#">Create a Page</a> for a celebrity, brand or business.
+                </p>
+            </div>
         </div>
-        <div class="auth-right">
-          <div class="auth-box">
-            <form action="" method="POST">
-            <div class="auth-form">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                />
-              </div>
-              <div class="auth-form">
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div class="auth-form">
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="Phone number"
-                />
-              </div>
-              <div class="auth-form">
-                <input type="password" placeholder="Password"
-                name="password" />
-              </div>
-              <div class="auth-form">
-                <button name="add" type="submit">Log In</button>
-              </div>
-            </form>
-
-            <a href="#">Forgotten password?</a>
-
-            <div class="divider"></div>
-
-            <button>Create New Account</button>
-          </div>
-          <p>
-            <a href="#">Create a Page</a> for a celebrity, brand or business.
-          </p>
-        </div>
-      </div>
     </div>
 
     <!-- FB FOOTER AREA  -->
     <div class="fb-footer">
-      <div class="footer-wraper">
-        <div class="footer-top">
-          <ul>
-            <li><a href="#">English (UK)</a></li>
-            <li><a href="#">বাংলা</a></li>
-            <li><a href="#">অসমীয়া</a></li>
-            <li><a href="#">हिन्दी</a></li>
-            <li><a href="#">नेपाली</a></li>
-            <li><a href="#">Bahasa Indonesia</a></li>
-            <li><a href="#">العربية</a></li>
-            <li><a href="#">中文(简体)</a></li>
-            <li><a href="#">Bahasa Melayu</a></li>
-            <li><a href="#">Español</a></li>
-            <li><a href="#">Português (Brasil)</a></li>
-          </ul>
+        <div class="footer-wraper">
+            <div class="footer-top">
+                <ul>
+                    <li><a href="#">English (UK)</a></li>
+                    <li><a href="#">বাংলা</a></li>
+                    <li><a href="#">অসমীয়া</a></li>
+                    <li><a href="#">हिन्दी</a></li>
+                    <li><a href="#">नेपाली</a></li>
+                    <li><a href="#">Bahasa Indonesia</a></li>
+                    <li><a href="#">العربية</a></li>
+                    <li><a href="#">中文(简体)</a></li>
+                    <li><a href="#">Bahasa Melayu</a></li>
+                    <li><a href="#">Español</a></li>
+                    <li><a href="#">Português (Brasil)</a></li>
+                </ul>
+            </div>
+            <div class="divider-0"></div>
+            <div class="footer-bottom">
+                <ul>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Messenger</a></li>
+                    <li><a href="#">Facebook Lite</a></li>
+                    <li><a href="#">Watch</a></li>
+                    <li><a href="#">Places</a></li>
+                    <li><a href="#">Games</a></li>
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Meta Pay</a></li>
+                    <li><a href="#">Oculus</a></li>
+                    <li><a href="#">Portal</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Bulletin</a></li>
+                    <li><a href="#">Fundraisers</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Voting Information Centre</a></li>
+                    <li><a href="#">Groups</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Create ad</a></li>
+                    <li><a href="#">Create Page</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Privacy Centre</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">AdChoices</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Contact uploading and non-users</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Activity log</a></li>
+                </ul>
+            </div>
+            <p>Meta © 2022</p>
         </div>
-        <div class="divider-0"></div>
-        <div class="footer-bottom">
-          <ul>
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log in</a></li>
-            <li><a href="#">Messenger</a></li>
-            <li><a href="#">Facebook Lite</a></li>
-            <li><a href="#">Watch</a></li>
-            <li><a href="#">Places</a></li>
-            <li><a href="#">Games</a></li>
-            <li><a href="#">Marketplace</a></li>
-            <li><a href="#">Meta Pay</a></li>
-            <li><a href="#">Oculus</a></li>
-            <li><a href="#">Portal</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Bulletin</a></li>
-            <li><a href="#">Fundraisers</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Voting Information Centre</a></li>
-            <li><a href="#">Groups</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Create ad</a></li>
-            <li><a href="#">Create Page</a></li>
-            <li><a href="#">Developers</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Privacy Centre</a></li>
-            <li><a href="#">Cookies</a></li>
-            <li><a href="#">AdChoices</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact uploading and non-users</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Activity log</a></li>
-          </ul>
-        </div>
-        <p>Meta © 2022</p>
-      </div>
     </div>
 
     <!-- MODAL BOX  -->
@@ -219,5 +212,6 @@
         </div>
       </div>
     </div> -->
-  </body>
+</body>
+
 </html>
