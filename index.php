@@ -17,17 +17,24 @@
 
     if(isset($_POST['add'])){
 
+      // form info
       $name = $_POST['name'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $password = $_POST['password'];
 
-      // echo filter_var($email, FILTER_VALIDATE_EMAIL);
+      // file upload
+      $image = $_FILES['image'];
+      $uniqueFileName = md5(time().rand()).$image['name'];
+      move_uploaded_file($image['tmp_name'], 'photo/'.$uniqueFileName);
 
+      // validation
       if(empty($name) || empty($email) || empty($phone) || empty($password)){
           $message =  "<p style='color:red;'>Fields are required</p>";
       }elseif(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
         $message =  "<p style='color:red;'>Invalid email</p>";
+      }elseif(filter_var($phone, FILTER_VALIDATE_INT) == false){
+        $message =  "<p style='color:red;'>Invalid number</p>";
       }
 
     }
@@ -50,7 +57,7 @@
                 }
               ?>
                 <div class="auth-box">
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <div class="auth-form">
                             <input type="text" name="name" placeholder="Name" />
                         </div>
@@ -62,6 +69,9 @@
                         </div>
                         <div class="auth-form">
                             <input type="password" placeholder="Password" name="password" />
+                        </div>
+                        <div class="auth-form">
+                            <input type="file" name="image" />
                         </div>
                         <div class="auth-form">
                             <button name="add" type="submit">Log In</button>
