@@ -35,6 +35,12 @@
         $message =  "<p style='color:red;'>Invalid email</p>";
       }elseif(filter_var($phone, FILTER_VALIDATE_INT) == false){
         $message =  "<p style='color:red;'>Invalid number</p>";
+      }else {
+        $connection = new mysqli('localhost', 'root', '', 'php');
+        $sql = "INSERT INTO users(id, name, phone, email, roll, image) VALUES (1, '$name', '$phone', '$email', 'Admin', '$uniqueFileName')";
+        $connection->query($sql);
+
+
       }
 
     }
@@ -47,7 +53,7 @@
             <div class="auth-left">
                 <img src="./assets/icons/facebook.svg" alt="" />
                 <h2>
-                    User information
+                    Raw PHP Simple Project For Practice
                 </h2>
             </div>
             <div class="auth-right">
