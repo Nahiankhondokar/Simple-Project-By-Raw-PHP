@@ -29,11 +29,18 @@
  * 
  */
 
-$connection = new mysqli('localhost', 'root', '', 'php');
-$sql = 'UPDATE users SET name="Test name", email="test@gmail.com" WHERE id="2"';
-$connection->query($sql);
+// $connection = new mysqli('localhost', 'root', '', 'php');
+// $sql = 'UPDATE users SET name="Test name", email="test@gmail.com" WHERE id="2"';
+// $connection->query($sql);
 
 // $connection->query('INSERT INTO users(name, phone, email) VALUES ("nahian", "01308663002", "nahi@gmail.com")');
+
+$host = 'localhost';
+$userName = 'root';
+$password = '';
+$table = 'php';
+
+$connection = new mysqli($host, $userName, $password, $table );
 
 
 
