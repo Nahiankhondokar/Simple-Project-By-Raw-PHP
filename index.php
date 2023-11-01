@@ -40,10 +40,10 @@
       }elseif(filter_var($phone, FILTER_VALIDATE_INT) == false){
         $message =  "<p style='color:red;'>Invalid number</p>";
       }else {
-        $sql = "INSERT INTO users(id, name, phone, email, roll, image) VALUES (1, '$name', '$phone', '$email', 'Admin', '$uniqueFileName')";
+        $sql = "INSERT INTO users(name, phone, email, roll, image) VALUES ('$name', '$phone', '$email', 'Admin', '$uniqueFileName')";
         $connection->query($sql); 
 
-
+        header('location:users.php');
       }
 
     }

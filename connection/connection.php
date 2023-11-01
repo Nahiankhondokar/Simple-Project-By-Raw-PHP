@@ -24,6 +24,8 @@
  * $sql = 'DELETE FROM users WHERE id="1"';
  * $sql = 'UPDATE users SET name="Test name", email="test@gmail.com" WHERE id="1"';
  * $sql = 'SELECT * FROM users';
+ * $sql = 'SELECT * FROM users WHERE id="1"';
+ * 
  * 
  *  fetch(), fetchAll(), fetch_all(), fetch_assoc(), fetch_array()
  * 
