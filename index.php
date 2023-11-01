@@ -25,7 +25,6 @@
       $name = $_POST['name'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
-      $password = $_POST['password'];
 
       // file upload
       $image = $_FILES['image'];
@@ -33,7 +32,7 @@
       move_uploaded_file($image['tmp_name'], 'photo/'.$uniqueFileName);
 
       // validation
-      if(empty($name) || empty($email) || empty($phone) || empty($password)){
+      if(empty($name) || empty($email) || empty($phone)){
           $message =  "<p style='color:red;'>Fields are required</p>";
       }elseif(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
         $message =  "<p style='color:red;'>Invalid email</p>";
@@ -77,13 +76,10 @@
                             <input type="text" name="phone" placeholder="Phone number" />
                         </div>
                         <div class="auth-form">
-                            <input type="password" placeholder="Password" name="password" />
-                        </div>
-                        <div class="auth-form">
                             <input type="file" name="image" />
                         </div>
                         <div class="auth-form">
-                            <button name="add" type="submit">Log In</button>
+                            <button name="add" type="submit">Register</button>
                         </div>
                     </form>
 

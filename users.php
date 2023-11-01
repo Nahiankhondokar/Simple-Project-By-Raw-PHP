@@ -75,7 +75,7 @@
       <td>
         <!-- <a href="" class="btn btn-danger"><i class="far fa-thumbs-down"></i></a> -->
         <a href="" class="btn btn-info"><i class="fas fa-eye"></i></a>
-        <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
+        <a href="edit.php?user_id=<?php echo $users['id'] ?>" class="btn btn-warning"><i class="far fa-edit"></i></a>
         <a href="?user_id=<?php echo $users['id'] ?>&image=<?php echo $users['image'] ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
       </td>
     </tr>
