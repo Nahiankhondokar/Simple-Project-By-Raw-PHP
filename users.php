@@ -4,7 +4,6 @@
 
 
 <?php 
-
   if(isset($_GET['user_id'])){
     $userId = $_GET['user_id'];
     $image = $_GET['image'];
@@ -15,8 +14,6 @@
     unlink('photo/'.$image);
     header('location:users.php');
   }
-
-
 ?>
 
 

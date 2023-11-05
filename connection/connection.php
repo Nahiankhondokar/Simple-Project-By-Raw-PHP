@@ -28,6 +28,16 @@
  * 
  * 
  *  fetch(), fetchAll(), fetch_all(), fetch_assoc(), fetch_array()
+ *  $sql = 'SELECT * FROM users WHERE name LIKE "%a%"';
+ *  $sql = 'SELECT * FROM users WHERE location="dhaka" AND location="feni"';
+ *  $sql = 'SELECT * FROM users WHERE location="dhaka" OR location="feni"';
+ *  $sql = 'SELECT * FROM users WHERE name IN ("nahian", "prosenjit")';
+ *  $sql = 'SELECT * FROM users WHERE age BETWEEN 5 AND 20';
+ *  $sql = 'SELECT MIN(age) AS minAge FROM users';
+ *  $sql = 'SELECT MAX(age) AS maxAge FROM users';
+ *  $sql = 'SELECT AVG(age) AS avgAge FROM users';
+ *  $sql = 'SELECT SUM(age) AS sumAge FROM users';
+ *  $sql = 'SELECT COUNT(age) AS countAge FROM users';
  * 
  */
 
